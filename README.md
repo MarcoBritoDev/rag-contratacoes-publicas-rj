@@ -2,7 +2,7 @@
 
 Sistema de **Adaptive RAG** que responde perguntas em português sobre as contratações públicas do Estado do Rio de Janeiro. Antes de buscar, ele decide onde procurar (lei, contratos, atas ou planejamento), recupera a evidência com busca híbrida e rerank, e responde citando a fonte. Quando não há evidência, recusa em vez de inventar.
 
-**Vídeo de apresentação (5 min):** [assista no YouTube](https://youtu.be/NsES25sy89I)
+**Vídeo de apresentação:** [assista no YouTube](https://youtu.be/NsES25sy89I)
 
 Projeto desenvolvido pelo Grupo 04 na Residência TIC em Trilhas (PUC-Rio · Instituto ECOA), Grande Desafio, Cenário 1.
 
