@@ -1,3 +1,39 @@
+# RAG para Contratações Públicas do RJ
+
+Sistema de **Adaptive RAG** que responde perguntas em português sobre as contratações públicas do Estado do Rio de Janeiro. Antes de buscar, ele decide onde procurar (lei, contratos, atas ou planejamento), recupera a evidência com busca híbrida e rerank, e responde citando a fonte. Quando não há evidência, recusa em vez de inventar.
+
+**Vídeo de apresentação (5 min):** [assista no YouTube](LINK_DO_VIDEO)
+
+Projeto desenvolvido pelo Grupo 04 na Residência TIC em Trilhas (PUC-Rio · Instituto ECOA), Grande Desafio, Cenário 1.
+
+## Início rápido
+
+Requisitos: Python 3.14 (o mesmo do CI), Git e cerca de 16 GB de RAM para a base completa.
+
+1. Clone o repositório e instale as dependências: `powershell -ExecutionPolicy Bypass -File scripts\setup.ps1` (Windows) ou `bash scripts/setup.sh` (Linux/macOS).
+2. Baixe os dados da V7 (5,3 GB) na [pasta do Drive](https://drive.google.com/drive/folders/1GEHoZALIIxp9hYR8V_WhKweRqQkw824r?usp=drive_link) e coloque `documents.jsonl` em `data/normalized/`, `base_estruturada.sqlite` em `data/structured/` e a pasta `index/` na raiz.
+3. Configure o `.env` (copiado de `.env.example`) com o provedor de LLM que for usar.
+4. Suba a API: `.venv\Scripts\python -m uvicorn app.api:app --host 127.0.0.1 --port 8080` (leva cerca de 2 minutos para aquecer).
+5. A interface web fica em um repositório separado, o [frontendRAG](https://github.com/etuarda/frontendRAG), que aponta para `http://localhost:8080`.
+
+Detalhes, variáveis de ambiente e testes estão na documentação completa abaixo.
+
+## Créditos
+
+Projeto feito em grupo. Obrigado a quem construiu junto:
+
+| Integrante | GitHub |
+|---|---|
+| Diogo | [@Diogooliveira10](https://github.com/Diogooliveira10) |
+| Eduarda | [@etuarda](https://github.com/etuarda) |
+| João Pedro | @[usuário] |
+| Marco Aurélio | [@MarcoBritoDev](https://github.com/MarcoBritoDev) |
+| Pâmela | @[usuário] |
+| Renato | [@limongi1234](https://github.com/limongi1234) |
+
+Repositório original do grupo: [Diogooliveira10/rag-grande-desafio-grupo04-cenario01](https://github.com/Diogooliveira10/rag-grande-desafio-grupo04-cenario01).
+
+---
 # RAG — Grande Desafio · Cenário 1: Contratações Públicas do RJ
 
 **Residência TIC em Trilhas · PUC-Rio · Instituto ECOA**
